@@ -1,4 +1,4 @@
-# Notable Healt - Code Challenge - FrontEnd
+# Notable Health - Code Challenge - FrontEnd
 
 This project was created using [Vite](https://vitejs.dev/) + [ReactJS](https://reactjs.org/) + [Typescript](https://www.typescriptlang.org/).
 
