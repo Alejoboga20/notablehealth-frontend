@@ -27,3 +27,9 @@ yarn install
 ```bash
 yarn dev
 ```
+
+4. In your browser go to your localhost in the port indicated in the console. For Example
+
+```
+ Local:   http://127.0.0.1:5173/
+```
