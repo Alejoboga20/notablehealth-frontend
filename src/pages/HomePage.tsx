@@ -1,5 +1,5 @@
 import { Grid } from '@mui/material';
-import { PhysiciansList } from '../components';
+import { AppointmentsList, PhysiciansList } from '../components';
 
 const HomePage = () => {
 	return (
@@ -8,7 +8,7 @@ const HomePage = () => {
 				<PhysiciansList />
 			</Grid>
 			<Grid item xs={12} sm={8}>
-				Appointment List
+				<AppointmentsList />
 			</Grid>
 		</Grid>
 	);

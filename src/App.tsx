@@ -1,5 +1,6 @@
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { SWRConfig } from 'swr';
+import { AppointmentsProvider } from './context';
 
 import { AppRouter } from './router';
 import { lightTheme } from './themes';
@@ -14,10 +15,12 @@ export const App = () => {
 				fetcher,
 			}}
 		>
-			<ThemeProvider theme={lightTheme}>
-				<CssBaseline />
-				<AppRouter />
-			</ThemeProvider>
+			<AppointmentsProvider>
+				<ThemeProvider theme={lightTheme}>
+					<CssBaseline />
+					<AppRouter />
+				</ThemeProvider>
+			</AppointmentsProvider>
 		</SWRConfig>
 	);
 };

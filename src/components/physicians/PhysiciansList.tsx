@@ -1,5 +1,5 @@
+import { useContext } from 'react';
 import { CircleOutlined } from '@mui/icons-material';
-import { usePhysicians } from '../../hooks/usePhysicians';
 import {
 	Box,
 	List,
@@ -10,16 +10,17 @@ import {
 	Typography,
 } from '@mui/material';
 import { FullScreenLoading } from '../ui';
+import { AppointmentsContext } from '../../context/AppointmentsContext';
 
 export const PhysiciansList = () => {
-	const { physicians, isLoading } = usePhysicians('physicians');
+	const { isLoading, physicians, selectPhysician } = useContext(AppointmentsContext);
 
 	if (isLoading) return <FullScreenLoading />;
 
 	return (
 		<Box sx={{ padding: '2rem' }}>
 			<Box sx={{ mb: 8 }}>
-				<Typography variant='h1' component='h1' color='secondary'>
+				<Typography variant='h1' component='h2' color='secondary'>
 					notable
 				</Typography>
 			</Box>
@@ -40,7 +41,7 @@ export const PhysiciansList = () => {
 				<List>
 					{physicians.map((physician) => (
 						<ListItem key={physician.id}>
-							<ListItemButton>
+							<ListItemButton onClick={() => selectPhysician(physician.id)}>
 								<ListItemIcon>
 									<CircleOutlined fontSize='small' />
 								</ListItemIcon>
