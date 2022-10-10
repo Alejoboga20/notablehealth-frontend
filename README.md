@@ -13,7 +13,7 @@ In order to setup the project follow this instructions:
 1. Clone the project
 
 ```bash
-$ git clone https://github.com/Alejoboga20/notablehealt-frontend.git
+$ git clone https://github.com/Alejoboga20/notablehealth-frontend.git
 ```
 
 2. Install Dependencies using yarn (you can use npm but the project is using yarn)
