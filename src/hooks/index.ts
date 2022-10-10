@@ -1,1 +1,1 @@
-export { useFetch } from './useFetch';
+export { usePhysicians } from './usePhysicians';
