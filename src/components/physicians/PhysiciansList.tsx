@@ -10,7 +10,7 @@ import {
 	Typography,
 } from '@mui/material';
 import { FullScreenLoading } from '../ui';
-import { AppointmentsContext } from '../../context/AppointmentsContext';
+import { AppointmentsContext } from '../../context';
 
 export const PhysiciansList = () => {
 	const { isLoading, physicians, selectPhysician } = useContext(AppointmentsContext);

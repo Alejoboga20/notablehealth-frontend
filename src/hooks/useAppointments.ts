@@ -1,4 +1,5 @@
 import useSWR, { SWRConfiguration } from 'swr';
+import { Appointment, Physician } from '../interfaces';
 
 export const useAppointments = (url: string, config: SWRConfiguration = {}) => {
 	const { data, error } = useSWR<AppointmentsResponse>(
@@ -16,16 +17,4 @@ interface AppointmentsResponse {
 	ok: boolean;
 	physician: Physician;
 	appoinments: Appointment[];
-}
-
-interface Physician {
-	id: number;
-	name: string;
-	email: string;
-}
-
-interface Appointment {
-	patientName: string;
-	time: string;
-	kind: string;
 }

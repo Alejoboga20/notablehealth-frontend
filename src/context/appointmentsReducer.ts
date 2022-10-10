@@ -1,4 +1,5 @@
-import { AppointmentsState, Physician } from './';
+import { Physician } from '../interfaces';
+import { AppointmentsState } from './';
 
 type AppointmentsActionType =
 	| { type: '[Appointments] - Load Physicians'; payload: Physician[] }

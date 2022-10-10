@@ -1,22 +1,21 @@
 import { useEffect, useReducer } from 'react';
 import { usePhysicians } from '../hooks';
+import { Physician } from '../interfaces';
 import { AppointmentsContext } from './AppointmentsContext';
 import { AppointmentsReducer } from './appointmentsReducer';
-import { useAppointments } from '../hooks/useAppointments';
 
 export interface AppointmentsState {
 	physicians: Physician[];
 	selectedPhysician: Physician | null;
-	appointments: Appointment[];
 	isLoading: boolean;
 }
 
 const INITIAL_STATE: AppointmentsState = {
 	physicians: [],
 	selectedPhysician: null,
-	appointments: [],
 	isLoading: true,
 };
+
 export const AppointmentsProvider = ({ children }: AppointmentsProviderProps) => {
 	const { physicians, isLoading } = usePhysicians('physicians');
 	const [state, dispatch] = useReducer(AppointmentsReducer, INITIAL_STATE);
@@ -44,16 +43,4 @@ export const AppointmentsProvider = ({ children }: AppointmentsProviderProps) =>
 
 interface AppointmentsProviderProps {
 	children: JSX.Element | JSX.Element[];
-}
-
-export interface Physician {
-	id: number;
-	name: string;
-	email: string;
-}
-
-export interface Appointment {
-	patientName: string;
-	time: string;
-	kind: string;
 }
